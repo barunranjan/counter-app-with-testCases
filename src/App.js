@@ -6,7 +6,7 @@ function App() {
   const [waring, setWarning] = useState(false);
 
   const increaseCount = () => {
-    setCount(count + 1);
+    setCount((preCount) => preCount + 1);
     if (count >= 0) setWarning(false);
   };
   const decereaseCount = () => {
@@ -30,20 +30,22 @@ function App() {
           </span>
         )}
       </div>
-      <button
-        data-test="button-increase-test"
-        className="btn btn-primary ml-5"
-        onClick={increaseCount}
-      >
-        Increase
-      </button>
-      <button
-        data-test="button-decerease-test"
-        className="btn btn-danger ml-5"
-        onClick={decereaseCount}
-      >
-        Decerease
-      </button>
+      <div className="mx-5">
+        <button
+          data-test="button-increase-test"
+          className="btn btn-primary ml-5"
+          onClick={increaseCount}
+        >
+          Increase
+        </button>
+        <button
+          data-test="button-decerease-test"
+          className="btn btn-danger ml-5"
+          onClick={decereaseCount}
+        >
+          Decerease
+        </button>
+      </div>
     </div>
   );
 }
